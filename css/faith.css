@@ -229,22 +229,21 @@ footer a {
   border: 2px solid #106300;
 }
 
-/* hero image */
 .jumbotron {
-  background-image: url("/images/banners/tower-green.png");
+  background-image: url("/images/banners/faith_bg.jpg");
   z-index: -10;
   background-attachment: fixed;
-  height: 88%;
+  height: 65%;
   width: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 20vh;
+  padding-top: 12vh;
 }
 
 .banner {
   color: rgba(255, 255, 255, 0.7);
-  padding-bottom: 01.5vh;
+  padding-bottom: 1.5vh;
   font-size: 4em;
 }
 
@@ -254,29 +253,29 @@ footer a {
   }
 }
 
-.img-responsive {
-  display: inline-block;
-}
-
 #hero-img {
-  height: 25vh;
+  height: 20vh;
 }
 
-#faith {
-  padding-bottom: 3em;
+.main-content {
+  font-size: 1.05em;
 }
 
-blockquote p {
-  font-size: 1.15em;
+.main-content h2, .side-content h2 {
+  padding-top: .75em;
 }
 
-/* paragraph text */
-.mtext {
-  font-size: 1.07em;
+.btn-top {
+  margin-top: 1em;
+  text-align: center;
+  border: 2px solid #051f08;
+  background-color: #fefff9;
+  color: #051f08;
 }
 
-/* card button */
-.btn-card {
-  border: 1.5px solid rgba(255, 255, 255, 0.7);
+.btn-top:hover {
+  background-color: #106300;
+  color: #fefff9;
+  border: 2px solid #106300;
 }
-/*# sourceMappingURL=homepage.css.map */
+/*# sourceMappingURL=faith.css.map */

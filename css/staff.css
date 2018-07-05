@@ -229,23 +229,30 @@ footer a {
   border: 2px solid #106300;
 }
 
-/* hero image */
 .jumbotron {
-  background-image: url("/images/banners/tower-green.png");
+  background-image: url("/images/banners/staff_2017-18.jpg");
   z-index: -10;
   background-attachment: fixed;
-  height: 88%;
+  height: 65%;
   width: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 20vh;
+  padding-top: 12vh;
+}
+
+.img-responsive {
+  display: inline-block;
 }
 
 .banner {
   color: rgba(255, 255, 255, 0.7);
-  padding-bottom: 01.5vh;
+  padding-bottom: 1.5vh;
   font-size: 4em;
+}
+
+#hero-img {
+  height: 20vh;
 }
 
 @media (max-width: 767px) {
@@ -253,30 +260,4 @@ footer a {
     font-size: 2.5em;
   }
 }
-
-.img-responsive {
-  display: inline-block;
-}
-
-#hero-img {
-  height: 25vh;
-}
-
-#faith {
-  padding-bottom: 3em;
-}
-
-blockquote p {
-  font-size: 1.15em;
-}
-
-/* paragraph text */
-.mtext {
-  font-size: 1.07em;
-}
-
-/* card button */
-.btn-card {
-  border: 1.5px solid rgba(255, 255, 255, 0.7);
-}
-/*# sourceMappingURL=homepage.css.map */
+/*# sourceMappingURL=staff.css.map */
