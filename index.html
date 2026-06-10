@@ -1,222 +1,323 @@
 <!DOCTYPE html>
-
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andre Catao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    :root {
+      --navy: #0D1B2A;
+      --papaya: #F77F3F;
+      --text: #F0EEE9;
+      --muted: #6A8BA8;
+      --card: #13212F;
+      --border: rgba(240, 238, 233, 0.07);
+    }
 
-    <title>Alumni Hall</title>
+    html { scroll-behavior: smooth; }
 
-    <!-- Link favicon -->
-    <link rel="icon" href="images/dawg-green.png">
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--text);
+    }
 
-    <meta name="description" content="Alumni Hall is the home of the Dawgs and the center of the universe.
-    Established in 1931, Alumni Hall is an all male dorm known for its members' camraderie.">
-    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(13, 27, 42, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
 
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://normalize-css.googlecode.com/svn/trunk/normalize.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    .nav-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      text-decoration: none;
+    }
 
-    <!-- normal and custom CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+    }
 
-    <link rel="stylesheet" href="css/homepage.css">
-    <link rel="stylesheet" href="css/styles.css">
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
-    </head>
+    .nav-links a:hover { color: var(--text); }
 
-  <body id="top">
-    <header>
-      <div class="brand-bar" id="brand">
-        <div class="container">
-          <div class="row">
-            <a href="https://www.nd.edu/" class="col d-inline-block"><img src="images/nd/dept-nd-white@2x.png"></a>
-          </div>
-        </div>
-      </div>
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 3rem;
+      overflow: hidden;
+    }
 
-      <nav class="navbar navbar-nav navbar-dark bg-alumni navbar-expand-md  nav-fill" id="main-nav">
+    .hero-texture {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-48%, -52%);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: clamp(160px, 28vw, 340px);
+      letter-spacing: -0.03em;
+      color: rgba(240, 238, 233, 0.035);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
 
-          <div class="container">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--papaya);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
 
-            <a class="nav-link nav-item navbar-brand" href="/index.html">
-              <img src="images/AlumniHallName_solo.svg" class="float-lg-left float-md-left float-sm-center" id="nav-logo">
-            </a>
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3.25rem, 9vw, 6.5rem);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.75rem;
+      max-width: 680px;
+      position: relative;
+    }
 
-            <div class="collapse navbar-collapse justify-content-end col-lg-4 col-md-7" id="navbarNav">
-              <a class="nav-link nav-item link" href="/about.html">About</a>
-              <a class="nav-link nav-item link" href="/staff.html">Staff</a>
-              <a class="nav-link nav-item link" href="/faith.html">Faith</a>
-              <a class="nav-link nav-item link" href="/sports.html">Sports</a>
-              <a class="nav-link nav-item link" href="/pups.html">Pups</a>
+    .hero-title em {
+      font-style: normal;
+      color: var(--papaya);
+    }
+
+    .hero-sub {
+      font-size: 1.0625rem;
+      color: var(--muted);
+      max-width: 420px;
+      margin-bottom: 3rem;
+      line-height: 1.75;
+      position: relative;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--papaya);
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      padding: 0.8rem 1.6rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      position: relative;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    /* Stripe */
+    .stripe {
+      height: 3px;
+      background: linear-gradient(90deg, var(--papaya) 0%, transparent 100%);
+      opacity: 0.4;
+    }
+
+    /* Links section */
+    .links-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5rem 1.5rem 6rem;
+    }
+
+    .links-wrap {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .links-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--papaya);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.4rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .link-card:hover {
+      border-color: rgba(247, 127, 63, 0.35);
+      background: #172434;
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .link-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background: rgba(247, 127, 63, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .link-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .link-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .link-arrow {
+      color: var(--muted);
+      font-size: 1.1rem;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .link-card:hover .link-arrow {
+      color: var(--papaya);
+      transform: translateX(2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 4rem 1.5rem; min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-name">Andre Catao</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="https://linkedin.com/in/andrecatao" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-texture" aria-hidden="true">andre CATAO</div>
+    <h1 class="hero-title">Andre<br><em>Catao.</em></h1>
+    <p class="hero-sub">Finance Manager at Quest Diagnostics. Duke Fuqua graduate student. Ministry leader in Madison, NJ.</p>
+    <a href="#projects" class="btn-primary">See my projects →</a>
+  </div>
+
+  <div class="stripe"></div>
+
+  <div class="links-section" id="projects">
+    <div class="links-wrap">
+      <p class="links-label">Projects</p>
+      <div class="links">
+
+        <a href="https://acatao2210.github.io/stpaul-checkin/index.html" class="link-card">
+          <div class="link-left">
+            <div class="link-icon">⛪</div>
+            <div>
+              <div class="link-title">Parish Check-In App</div>
+              <div class="link-sub">St. Paul's Young Adult Ministry · Firebase</div>
             </div>
           </div>
-      </nav>
-    </header>
+          <span class="link-arrow">→</span>
+        </a>
 
-    <!-- Hero Image -->
-    <div class="jumbotron jumbotron-fluid" id="hero-container">
-      <div class="container text-center">
-        <h1 class="animated slideInUp banner">WE ARE</h1>
-        <img src="images/landing/AlumniHallName_70t.svg" class="img-responsive img-fluid col-sm-12 col-md-10 col-lg-8 animated fadeInUp" id="hero-img">
+        <a href="https://acatao2210.github.io/hawaii/" class="link-card">
+          <div class="link-left">
+            <div class="link-icon">🌺</div>
+            <div>
+              <div class="link-title">Hawaii Travel Guide</div>
+              <div class="link-sub">O'ahu + Big Island · 10-night itinerary</div>
+            </div>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+        <a href="https://linkedin.com/in/andrecatao" class="link-card" target="_blank" rel="noopener">
+          <div class="link-left">
+            <div class="link-icon">💼</div>
+            <div>
+              <div class="link-title">LinkedIn</div>
+              <div class="link-sub">Finance Manager · Quest Diagnostics</div>
+            </div>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
       </div>
     </div>
+  </div>
 
-    <section class="content" id="about">
-      <div class="container">
-        <h1 class="col-lg-7 col-md-10 col-sm-12 section-title">Welcome!</h1>
+  <footer>© 2026 Andre Catao</footer>
 
-        <blockquote class="blockquote">
-          <p class="mb-0">Notre Dame by choice, Alumni by the grace of God.</p>
-          <footer class="blockquote-footer">Rev. George Rozum C.S.C.</footer>
-        </blockquote>
-
-        <div class="row">
-
-          <!-- Basic Facts about Alumni card-->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card">
-              <img src="images/Arms_of_Alumni.svg" id="coatOfArms" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">The Basics</h5>
-                <p class="card-text">
-                  So you got put into Alumni. What does this mean? Why does Alumni use Greek letters?
-                  What even is this crest? Get the rundown on Alumni Hall here.
-                </p>
-                <a href="#" class="btn btn-primary btn-card">Get the Facts <i class="fas fa-angle-double-right"></i></a>
-              </div>
-          </div>
-        </div>
-
-        <!-- Life in Alumi card -->
-        <div class="col-lg-4 col-md-6">
-          <div class="card ">
-            <img src="images/dawg-white.svg" id="coatOfArms" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Dorm Life</h5>
-                <p class="card-text">
-                  Okay, so you're here. You may be asking: &ldquo;What should I expect? How do I live with no AC?
-                   Will I be able to make friends? Will I get along with my roommate?&rdquo; No worries, we got you covered.
-                </p>
-                <a href="#" class="btn btn-primary btn-card">Living in Alumni <i class="fas fa-angle-double-right"></i></a>
-              </div>
-          </div>
-        </div>
-
-        <!-- Hall Staff card-->
-        <div class="col-lg-4 col-md-6">
-          <div class="card">
-            <img src="images/staff/fr._rozum.png" id="coatOfArms" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Hall Staff</h5>
-              <p class="card-text">
-                Meet the men who help Alumni Hall be the best dorm on campus. From the
-                legend of FGR to figuring out who your RA is, check out the staff here.
-              </p>
-              <a href="#" class="btn btn-primary btn-card">Meet the Men <i class="fas fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="content">
-      <div class="container">
-        <div class="row">
-
-          <!-- Faith-->
-          <div class="col-md-6 col-sm-12" id="faith">
-          <h1 class="col-sm-12 col-md-9 section-title">Faith Life</h1>
-
-          <blockquote class="blockquote col-11">
-            <p class="mb-0">The mind will not be cultivated at the expense of the heart.</p>
-            <footer class="blockquote-footer">Bl. Basil Moreau C.S.C.</footer>
-          </blockquote>
-
-          <p class="col-11 mtext">
-            Whether you're Catholic or non-religious, all are welcome to join us in the liturgy.
-            No matter where you are in your journey of faith, we're here with and for
-            each other.
-          </p>
-          <a href="/faith.html" class="btn btn-primary">Learn More <i class="fas fa-angle-double-right"></i></a>
-          </div>
-
-          <!-- Sports -->
-          <div class="col-md-6 col-sm-12" id="sports">
-              <h1 class="col-sm-12 col-md-9 section-title">Sports</h1>
-
-              <blockquote class="blockquote col-11">
-                <p class="mb-0">Who let the dawgs out? Alumni let the dawgs out!</p>
-                <footer class="blockquote-footer">Alumni Hall</footer>
-              </blockquote>
-
-              <p class="col-12 mtext">
-                Fancy yourself an athletic dawg? Interested in getting involved in intermural or
-                interhall sports? From section tournaments to winning it all, we got you covered.
-              </p>
-              <a href="/sports.html" class="btn btn-primary">Learn More <i class="fas fa-angle-double-right"></i></a>
-              </div>
-        </div>
-      </div>
-    </section>
-
-
-        <!-- Back to Top Button -->
-        <div class="d-flex flex-column">
-            <a href="#top" class="btn btn-primary btn-top align-self-center"><i class="fas fa-arrow-up"></i> Back to Top</a>
-        </div>
-
-    <footer id="footer">
-      <!--Desktop Footer-->
-      <div class="container desktop-footer">
-        <div class="row">
-          <div class="col-sm-12 col-md-9">
-            <p>
-              <a href="https://www.nd.edu/copyright/" class="footer">Copyright</a> &copy;
-              <script>document.write(new Date().getFullYear())</script> <a href="https://www.nd.edu/">University of Notre Dame</a>
-              <br><a href="beta.html">Alumni Hall</a>&nbsp; 167 Alumni Hall, Notre Dame, IN 46556
-              <br><a href="https://www.nd.edu/about/accessibility/">Accessibility Information</a>
-            </p>
-          </div>
-          <div class="col-md-3">
-            <img src="images/nd/ND_mark_blue_L.png" class="float-right" id="academic-mark">
-          </div>
-        </div>
-      </div>
-    <!-- Mobile footer -->
-    <div class="container mobile-footer">
-        <div class="row">
-          <div class="col-sm-12">
-            <p>
-              <a href="https://www.nd.edu/copyright/" class="footer">Copyright</a> &copy;
-              <script>document.write(new Date().getFullYear())</script>
-              <br><a href="https://www.nd.edu/" class="wrap">University of Notre Dame</a>
-              <br><a href="beta.html">Alumni Hall</a>
-              <br>167 Alumni Hall, Notre Dame, IN 46556
-              <br><a href="https://www.nd.edu/about/accessibility/">Accessibility Information</a>
-            </p>
-          </div>
-          <div class="col-sm-12">
-            <img src="images/nd/ND_mark_blue_M.png" id="academic-mark">
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Link bootstrap javascript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-  </body>
+</body>
 </html>
